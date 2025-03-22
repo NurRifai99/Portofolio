@@ -5,12 +5,12 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
-
+import Sideicon from './layout/Sideicon';
 
 const App = () => {
   const [openTabs, setOpenTabs] = useState([]);
   const [activePage, setActivePage] = useState(null);
-
+ 
   const handleOpenPage = (page) => {
     if (!openTabs.includes(page)) {
       setOpenTabs([...openTabs, page]);
@@ -32,13 +32,15 @@ const App = () => {
       case 'About': return <About />;
       case 'Projects': return <Projects />;
       case 'Contact': return <Contact />;
-      default: return <div className="text-center text-3xl mt-20">PORTOFOLIO</div>;
+      default: return <div></div>;
     }
   };
 
   return (
-    <div className="flex h-screen bg-[#1e1e1e] text-white">
+    <div className="flex h-screen bg-[#000000] text-white">
+      <Sideicon/>
       <Sidebar onSelectPage={handleOpenPage} />
+
       <div className="flex flex-col flex-1">
         <Navbar openTabs={openTabs} onCloseTab={handleCloseTab} setActivePage={setActivePage} activePage={activePage} />
         <div className="p-4 flex-1 overflow-auto">
