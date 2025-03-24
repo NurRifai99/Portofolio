@@ -1,16 +1,18 @@
 import React from 'react';
+import Sidemenu from '../komponen/Sidemenu';
 
-const Sidebar = ({ onSelectPage }) => {
+const Sidebar = ({ onSelectPage,activePage }) => {
   return (
-    <div className="w-auto bg-[#000000] flex flex-col py-4 pt-10  border border-white ">
+    <div className="w-auto bg-[#000000] flex flex-col py-4 pt-10  border-l border-r border-cyan-500  ">
 
       <p className='font-bold pl-2 pr-3'> ^ PORTOFOLIO</p>
-      <div className="w-full pl-3">
+      <div className="w-full">
+        <Sidemenu onselectpage={onSelectPage} activepage={activePage} page='Home'/>
+        <Sidemenu onselectpage={onSelectPage} activepage={activePage} page='About'/>
+        <Sidemenu onselectpage={onSelectPage} activepage={activePage} page='Projects'/>
+        <Sidemenu onselectpage={onSelectPage} activepage={activePage} page='Contact'/>
+        {/* <Sidemenu onselectpage={onSelectPage} page=''/> */}
 
-        <button onClick={() => onSelectPage('Home')} className="block w-full text-left px-2 py-1 hover:bg-gray-700"> ^ Home</button>
-        <button onClick={() => onSelectPage('About')} className="block w-full text-left px-2 py-1 hover:bg-gray-700">^ About</button>
-        <button onClick={() => onSelectPage('Projects')} className="block w-full text-left px-2 py-1 hover:bg-gray-700">^ Projects</button>
-        <button onClick={() => onSelectPage('Contact')} className="block w-full text-left px-2 py-1 hover:bg-gray-700">^ Contact</button>
       </div>
     </div>
   );

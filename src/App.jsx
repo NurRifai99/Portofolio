@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import Sideicon from './layout/Sideicon';
 
 const App = () => {
+  
   const [openTabs, setOpenTabs] = useState([]);
   const [activePage, setActivePage] = useState(null);
  
@@ -37,17 +38,22 @@ const App = () => {
   };
 
   return (
-    <div className="flex h-screen bg-[#000000] text-white">
-      <Sideicon/>
-      <Sidebar onSelectPage={handleOpenPage} />
+    <>
+      <div className="flex h-screen bg-[#000000] text-white">
+        <Sideicon/>
+        <Sidebar onSelectPage={handleOpenPage} activePage={activePage} />
 
-      <div className="flex flex-col flex-1">
-        <Navbar openTabs={openTabs} onCloseTab={handleCloseTab} setActivePage={setActivePage} activePage={activePage} />
-        <div className="p-4 flex-1 overflow-auto">
-          {renderPage()}
+        <div className="flex flex-col flex-1">
+          <Navbar openTabs={openTabs} onCloseTab={handleCloseTab} setActivePage={setActivePage} activePage={activePage} />
+          <div className="border-b pl-4 border-cyan-500">portofolio ++ pages ++ {activePage}</div>
+          <div className="p-4 flex-1 overflow-auto">
+            {renderPage()}
+          </div>
         </div>
+
       </div>
-    </div>
+    </>
+    
   );
 };
 

@@ -9,7 +9,7 @@ const Sideicon =() => {
                 <Icon/>
                 <Icon/>
                 <Icon/>
-            </div>
+            </div> 
 
             <div className="">
                 <Icon/>
