@@ -5,7 +5,9 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import Notab from './pages/Notab';
 import Sideicon from './layout/Sideicon';
+import Side from './layout/Side';
 
 const App = () => {
   
@@ -33,19 +35,23 @@ const App = () => {
       case 'About': return <About />;
       case 'Projects': return <Projects />;
       case 'Contact': return <Contact />;
-      default: return <div></div>;
+      default: return <></>;
     }
   };
 
   return (
     <>
       <div className="flex h-screen bg-[#000000] text-white">
-        <Sideicon/>
-        <Sidebar onSelectPage={handleOpenPage} activePage={activePage} />
+
+        <Side onSelectPage={handleOpenPage} activePage={activePage}/>
 
         <div className="flex flex-col flex-1">
-          <Navbar openTabs={openTabs} onCloseTab={handleCloseTab} setActivePage={setActivePage} activePage={activePage} />
-          <div className="border-b pl-4 border-cyan-500">portofolio ++ pages ++ {activePage}</div>
+          {openTabs.length === 0 ? (
+            <Notab/>
+          ) : (
+            <Navbar openTabs={openTabs} onCloseTab={handleCloseTab} setActivePage={setActivePage} activePage={activePage} />
+          )}
+
           <div className="p-4 flex-1 overflow-auto">
             {renderPage()}
           </div>

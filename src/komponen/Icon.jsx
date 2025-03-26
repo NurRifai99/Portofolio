@@ -1,9 +1,7 @@
-
-const Icon =({}) => {
+const Icon =({ icon }) => {
     return(
-        <div className="w-4 h-4 bg-red-500 m-3">
-        </div>
-    )
-}
+        <i className={`codicon codicon-${icon} block text-[55px]  bg-red-700`}></i>
+    );
+};
 
 export default Icon;
