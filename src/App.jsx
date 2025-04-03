@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import Sidebar from './layout/Sidebar';
 import Navbar from './layout/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Notab from './pages/Notab';
-import Sideicon from './layout/Sideicon';
 import Side from './layout/Side';
 
 const App = () => {
@@ -40,7 +38,7 @@ const App = () => {
   };
 
   return (
-    <>
+    
       <div className="flex h-screen bg-[#000000] text-white">
 
         <Side onSelectPage={handleOpenPage} activePage={activePage}/>
@@ -52,14 +50,13 @@ const App = () => {
             <Navbar openTabs={openTabs} onCloseTab={handleCloseTab} setActivePage={setActivePage} activePage={activePage} />
           )}
 
-          <div className="p-4 flex-1 overflow-auto">
+          <div className="flex-1 overflow-auto">
             {renderPage()}
           </div>
         </div>
 
       </div>
-    </>
-    
+
   );
 };
 

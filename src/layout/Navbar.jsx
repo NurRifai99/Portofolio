@@ -22,7 +22,7 @@ const Navbar = ({ openTabs, onCloseTab, setActivePage, activePage }) => {
                   onClick={() => setActivePage(tab)}
                 > 
                   <svg xmlns="http://www.w3.org/2000/svg" width="18px"  viewBox="0 0 16 16"><path fill="#ea580c" d="M4.708 5.578L2.061 8.224l2.647 2.646l-.708.708l-3-3V7.87l3-3zm7-.708L11 5.578l2.647 2.646L11 10.87l.708.708l3-3V7.87zM4.908 13l.894.448l5-10L9.908 3z"/></svg>
-                  <span className='ml-0.5'>{tab}.html</span>
+                  <span className='ml-0.5 text-sm'>{tab}.html</span>
                   <button onClick={(e) => { e.stopPropagation(); onCloseTab(tab); }} className="ml-2 p-0.5 rounded-sm codicon codicon-chrome-close cursor-pointer hover:outline-dashed hover:outline-1 hover:outline-orange-400 "></button>
 
                 </div>
@@ -47,7 +47,7 @@ const Navbar = ({ openTabs, onCloseTab, setActivePage, activePage }) => {
         
       </div>
        
-      <div className="flex items-center border-b pl-4 border-cyan-500">
+      <div className="flex items-center border-b pl-4 border-cyan-500 text-sm">
         Portofolio {iconn} Pages  {iconn} {activePage}.html
       </div>
     </>

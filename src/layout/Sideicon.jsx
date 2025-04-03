@@ -1,5 +1,4 @@
 import Icon from "../komponen/Icon";
-import acun from "../assets/account.svg"
 
 const Sideicon =({toggleSidebar}) => {
     return(
